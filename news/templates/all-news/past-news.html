@@ -1,0 +1,28 @@
+{%extends 'all-news/layout.html'%}
+
+{% block content %}
+{{block.super}}
+<hr>
+<div class="container col-lg-8">
+
+    <!-- Looping through news   -->
+    {% for news_item in news %}
+
+    <div class="card">
+        <!-- displaying News articles -->
+        <div class="text-center">
+            <h2 class="text-center card-header"> {{ news_item.title }} </h2>
+            <p class="text-center card-body">{{news_item.post}} </p>
+        </div>
+
+    </div>
+
+
+    {% empty %}
+    <div class="row text-center">
+        <h2 class="text-center">There No News Items</h2>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
